@@ -14,18 +14,23 @@ class NeighborhoodSeeder extends Seeder
     {
         $neighborhoods =[
             [
-                'neighborhood_name' => 'Robledo',
+                'neighborhood_name' => 'Santo Domingo',
                 'commune' => 1
             ],
 
             [
-                'neighborhood_name' => 'C4TA',
+                'neighborhood_name' => 'Moravia',
                 'commune' => 4
             ],
 
             [
-                'neighborhood_name' => 'San Javier',
+                'neighborhood_name' => 'La Salle',
                 'commune' => 3
+            ],
+
+            [
+                'neighborhood_name' => 'La Isla',
+                'commune' => 2
             ]
         ];
         DB::table('neighborhood')->insert($neighborhoods);

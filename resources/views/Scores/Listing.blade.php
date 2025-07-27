@@ -1,11 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Scores</title>
-</head>
-<body>
-    <h1>Hiii! This is the "ScoreView" without Query Builder 📦.</h1>
-</body>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Scores</title>
+
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.min.js" integrity="sha384-7qAoOXltbVP82dhxHAUje59V5r2YsVfBafyUDxEdApLPmcdhBPg1DKg1ERo0BZlK" crossorigin="anonymous"></script>
+
+        <link rel="stylesheet" href="{{ asset('css/score.css') }}">
+    </head>
+    <body>
+        <div class="banner">
+            <img src="{{ asset('imagenes/logo.png') }}" alt="Institution Logo">
+            <h1 class="banner-text">Scores</h1>
+        </div>
+
+        <div class="container"> 
+            <div align="right">
+                <a href="#" class="btn btn-success">Add</a>
+            </div>
+        
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">Subject</th>
+                        <th scope="col">Teacher</th>
+                        <th scope="col">Student</th>
+                        <th scope="col">Score #1</th>
+                        <th scope="col">Score #2</th>
+                        <th scope="col">Score #3</th>
+                        <th scope="col">Final:Score</th>
+                        <th scope="col">State</th>
+                        <th scope="col">Options</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach($scores as $sc)
+                        <tr>
+                            <th scope="row">{{$sc->subject}}</th>
+                            <td>{{$sc->teacher}}</td>
+                            <td>{{$sc->student}}</td>
+                            <td>{{$sc->score1}}</td>
+                            <td>{{$sc->score2}}</td>
+                            <td>{{$sc->score3}}</td>
+                            <td>{{$sc->final_score}}</td>
+                            <td>{{$sc->state}}</td>
+                            <td>
+                                <a href="#" class="btn btn-primary">Edit</a>
+                                <a href="#" class="btn btn-danger">Delete</a>
+                            </td>
+                        </tr>
+                    @endforeach
+                </tbody>
+            </table>
+        </div>
+    </body>
 </html>

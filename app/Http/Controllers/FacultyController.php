@@ -10,7 +10,7 @@ class FacultyController extends Controller
 {
     public function SeeFaculties()
     {
-        $faculties = DB::table('faculty')->get(); #select * from faculty
+        $faculties = DB::table('faculty')->get(); // select * from faculty
         return view('Faculties.Listing', compact('faculties'));
     }
 }

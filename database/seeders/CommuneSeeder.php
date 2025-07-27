@@ -14,19 +14,19 @@ class CommuneSeeder extends Seeder
     {
         $communes =[
             [
-                'commune_name' => 'Softgirls: programming seedbed'
+                'commune_name' => 'Popular'
             ],
 
             [
-                'commune_name' => 'PAAP tutorials'
+                'commune_name' => 'Santa Cruz'
             ],
 
             [
-                'commune_name'=> 'Pascualinos Entrepreneurs Network'
+                'commune_name'=> 'Manrique'
             ],
 
             [
-                'commune_name' => 'Dance Club'
+                'commune_name' => 'Aranjuez'
             ]
         ];
         DB::table('commune')->insert($communes);
